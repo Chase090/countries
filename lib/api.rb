@@ -21,7 +21,7 @@ class API
             country.region = country_list["region"]["value"]
             country.income_level = country_list["incomeLevel"]["value"]
         end
- binding.pry
+
     end
 
 end
