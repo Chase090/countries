@@ -10,15 +10,18 @@ class API
 
     # "name" = country name
     # "capitalCity" = capital city
-    # "region"{value} = region
+    # cou"region"{value} = region
     # "incomelevel"{value} = income level
     #  :country_name, :capital_city, :region, :income_level
         array_of_countries.each do |country_list| 
-            binding.pry
-            Country
-            name = country_list["name"]
+           
+            country = Country.new
+            country.country_name = country_list["name"]
+            country.capital_city = country_list["capitalCity"]
+            country.region = country_list["region"]["value"]
+            country.income_level = country_list["incomeLevel"]["value"]
         end
-
+ binding.pry
     end
 
 end
