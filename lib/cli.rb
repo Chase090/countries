@@ -18,6 +18,7 @@ class CLI
         if user_input == "yes" || user_input == "y"
             puts "Ok! Here!"
             display_countries
+            user_coutry_choice
         end
     end
 
@@ -26,4 +27,27 @@ class CLI
             puts "#{index}. #{country.country_name}"
         end
     end
+
+    def user_coutry_choice
+        puts "enter the number of the country for more info "
+        index = gets.strip.to_i - 1
+        until index.between?(0, Country.all.length)
+            puts "Sorry invalid entry"
+            index = gets.strip.to_i - 1
+        end
+        country_instance = Country.all[index]
+        display_countries_details(country_instance)
+      
+    end
+
+    def display_countries_details(country)
+        sleep(1) # PAUSES THE CODE
+        puts "\n"
+        puts country.country_name
+        puts "Capital City: " + country.capital_city
+        puts "World Region: " + country.region
+        puts "Income Level: " + country.income_level 
+    end
+
+
 end
