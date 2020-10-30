@@ -18,15 +18,15 @@ class CLI
    -O-        .    \   /         . |  ~/                  .
     |    .          ~\ \   .      /  /~          o
   .                   ~--___ ; ___--~       
-                 .          ---         .              "
+                 .          ---         .              ".colorize(:green)
        API.fetch_countries 
        self.list
     end
 
     def list
-
-        puts "Would you like to see the list of the coutries?"
-        puts "type yes to continue or any key to exit"
+  
+        puts "Would you like to see the list of the coutries?".colorize(:blue)
+        puts "type".colorize(:blue) + " 'yes'".colorize(:light_green) + "or".colorize(:blue) + " 'y'".colorize(:light_green) + "to continue or".colorize(:blue) + " 'anykey'".upcase.colorize(:red) + "to exit".colorize(:blue)
     
         user_input = gets.strip.downcase
 
@@ -36,26 +36,29 @@ class CLI
             display_countries
             user_coutry_choice
 
+            
+
             sleep(2)
             puts "\n"
 
-            menu
+            list
         else
-            puts "Ok then, See ya!"
+            puts "\n"
+            puts "Ok then, See ya!".upcase
         end
     end
 
     def display_countries
         Country.all.each.with_index(1) do |country, index|
-            puts "#{index}. #{country.country_name}"
+            puts "#{index}." + "#{country.country_name}".colorize(:blue)
         end
     end
 
     def user_coutry_choice
-        puts "enter the number of the country for more info "
+        puts "Type the" + " number ".upcase.colorize(:red) + "of the country to see more information "
         index = gets.strip.to_i - 1
         until index.between?(0, Country.all.length)
-            puts "Sorry invalid entry"
+            puts "Sorry invalid entry, Try again"
             index = gets.strip.to_i - 1
         end
         country_instance = Country.all[index]
@@ -63,13 +66,17 @@ class CLI
       
     end
 
+    
+
     def display_countries_details(country)
         sleep(1) # PAUSES THE CODE
         puts "\n"
         puts country.country_name
-        puts "Capital City: " + country.capital_city
-        puts "World Region: " + country.region
-        puts "Income Level: " + country.income_level 
+        puts "Capital City: ".colorize(:violet) + country.capital_city.upcase.colorize(:red)
+        puts "World Region: ".colorize(:violet) + country.region.upcase.colorize(:red)
+        puts "Income Level: ".colorize(:violet) + country.income_level.upcase.colorize(:red)
+
+
     end
 
 
