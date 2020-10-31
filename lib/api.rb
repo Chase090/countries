@@ -8,11 +8,7 @@ class API
         array_of_countries = hash[1]
        
 
-    # "name" = country name
-    # "capitalCity" = capital city
-    # cou"region"{value} = region
-    # "incomelevel"{value} = income level
-    #  :country_name, :capital_city, :region, :income_level
+
         array_of_countries.each do |country_list| 
            
             country = Country.new
