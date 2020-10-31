@@ -22,8 +22,8 @@ execute application, follow prompts and input the requested replies.
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-https://github.com/Chase090/countries
+Pull requests and bug reports are welcome at https://github.com/Chase090/countries. For major changes, please open an issue first to discuss what you would like to change.
+
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+The gem is available as open source under the terms of the[MIT License](https://choosealicense.com/licenses/mit/)
